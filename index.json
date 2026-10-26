@@ -1,0 +1,215 @@
+{
+  "overbenchCatalog": 1,
+  "themes": [
+    {
+      "id": "catppuccin",
+      "name": "Catppuccin",
+      "author": "Catppuccin",
+      "version": "1.0.0",
+      "license": "MIT",
+      "file": "themes/catppuccin.json",
+      "sha256": "4d71ffe0b76c4c0ca7a09a92e38dba0ff959316557b83b6ad063e6cce87a9386",
+      "preview": {
+        "light": {
+          "bg-app": "#eff1f5",
+          "bg-sidebar": "#e6e9ef",
+          "bg-surface": "#eff1f5",
+          "bg-subtle": "#dce0e8",
+          "bg-selected": "#ccd0da",
+          "border-default": "rgb(76 79 105 / 14%)",
+          "border-subtle": "rgb(76 79 105 / 8.5%)",
+          "border-strong": "rgb(76 79 105 / 24%)",
+          "primary-from": "#5c5f77",
+          "primary-to": "#4c4f69"
+        },
+        "dark": {
+          "bg-app": "#1e1e2e",
+          "bg-sidebar": "#181825",
+          "bg-surface": "#282839",
+          "bg-subtle": "#313244",
+          "bg-selected": "#45475a",
+          "border-default": "rgb(205 214 244 / 11%)",
+          "border-subtle": "rgb(205 214 244 / 7.5%)",
+          "border-strong": "rgb(205 214 244 / 18%)",
+          "primary-from": "#d5dffd",
+          "primary-to": "#bac2de"
+        }
+      }
+    },
+    {
+      "id": "gruvbox",
+      "name": "Gruvbox",
+      "author": "Pavel Pertsev (morhetz)",
+      "version": "1.0.0",
+      "license": "MIT",
+      "file": "themes/gruvbox.json",
+      "sha256": "3575e3339aeaa0a337a9c43d33b8d2c774b396f47a6ea276ea4841e43cffe3e6",
+      "preview": {
+        "light": {
+          "bg-app": "#fbf1c7",
+          "bg-sidebar": "#f2e5bc",
+          "bg-surface": "#fbf1c7",
+          "bg-subtle": "#ebdbb2",
+          "bg-selected": "#d5c4a1",
+          "border-default": "rgb(60 56 54 / 12%)",
+          "border-subtle": "rgb(60 56 54 / 7.5%)",
+          "border-strong": "rgb(60 56 54 / 21%)",
+          "primary-from": "#504945",
+          "primary-to": "#403c3a"
+        },
+        "dark": {
+          "bg-app": "#282828",
+          "bg-sidebar": "#1d2021",
+          "bg-surface": "#32302f",
+          "bg-subtle": "#3c3836",
+          "bg-selected": "#46413e",
+          "border-default": "rgb(235 219 178 / 10.5%)",
+          "border-subtle": "rgb(235 219 178 / 6.5%)",
+          "border-strong": "rgb(235 219 178 / 17%)",
+          "primary-from": "#f2e5bc",
+          "primary-to": "#dbcba2"
+        }
+      }
+    },
+    {
+      "id": "nord",
+      "name": "Nord",
+      "author": "Arctic Ice Studio",
+      "version": "1.0.0",
+      "license": "MIT",
+      "file": "themes/nord.json",
+      "sha256": "bfd9d05baece3d314aeb5e3c2d1e81d7c8f3265bec3ffe8a5bf59dc4ae404dae",
+      "preview": {
+        "light": {
+          "bg-app": "#eceff4",
+          "bg-sidebar": "#e5e9f0",
+          "bg-surface": "#eceff4",
+          "bg-subtle": "#d8dee9",
+          "bg-selected": "#c9cfda",
+          "border-default": "rgb(46 52 64 / 11.5%)",
+          "border-subtle": "rgb(46 52 64 / 7%)",
+          "border-strong": "rgb(46 52 64 / 20.5%)",
+          "primary-from": "#434c5e",
+          "primary-to": "#2e3440"
+        },
+        "dark": {
+          "bg-app": "#2e3440",
+          "bg-sidebar": "#292e3a",
+          "bg-surface": "#353b49",
+          "bg-subtle": "#3b4252",
+          "bg-selected": "#434c5e",
+          "border-default": "rgb(236 239 244 / 9.5%)",
+          "border-subtle": "rgb(236 239 244 / 6%)",
+          "border-strong": "rgb(236 239 244 / 16%)",
+          "primary-from": "#f5f8fd",
+          "primary-to": "#d8dee9"
+        }
+      }
+    },
+    {
+      "id": "rose-pine",
+      "name": "Rosé Pine",
+      "author": "Rosé Pine",
+      "version": "1.0.0",
+      "license": "MIT",
+      "file": "themes/rose-pine.json",
+      "sha256": "41ee444ee2c0b6463e5f573a50d24b92a80f25ecb08e9f8420565715b049606b",
+      "preview": {
+        "light": {
+          "bg-app": "#faf4ed",
+          "bg-sidebar": "#fffaf3",
+          "bg-surface": "#fffaf3",
+          "bg-subtle": "#f2e9e1",
+          "bg-selected": "#dfdad9",
+          "border-default": "rgb(70 66 97 / 12.5%)",
+          "border-subtle": "rgb(70 66 97 / 7.5%)",
+          "border-strong": "rgb(70 66 97 / 22%)",
+          "primary-from": "#5c5878",
+          "primary-to": "#464261"
+        },
+        "dark": {
+          "bg-app": "#191724",
+          "bg-sidebar": "#1f1d2e",
+          "bg-surface": "#1f1d2e",
+          "bg-subtle": "#26233a",
+          "bg-selected": "#2e2b41",
+          "border-default": "rgb(224 222 244 / 11%)",
+          "border-subtle": "rgb(224 222 244 / 7.5%)",
+          "border-strong": "rgb(224 222 244 / 17.5%)",
+          "primary-from": "#e9e7fd",
+          "primary-to": "#d0cee3"
+        }
+      }
+    },
+    {
+      "id": "solarized",
+      "name": "Solarized",
+      "author": "Ethan Schoonover",
+      "version": "1.0.0",
+      "license": "MIT",
+      "file": "themes/solarized.json",
+      "sha256": "f4728ec7a9f114a3004ffa11bbe89546576f5e0524bd1477fb63124bc59aae67",
+      "preview": {
+        "light": {
+          "bg-app": "#fdf6e3",
+          "bg-sidebar": "#eee8d5",
+          "bg-surface": "#fdf6e3",
+          "bg-subtle": "#e6e0cd",
+          "bg-selected": "#ded8c5",
+          "border-default": "rgb(88 110 117 / 16%)",
+          "border-subtle": "rgb(88 110 117 / 10%)",
+          "border-strong": "rgb(88 110 117 / 27.5%)",
+          "primary-from": "#586e75",
+          "primary-to": "#44595f"
+        },
+        "dark": {
+          "bg-app": "#002b36",
+          "bg-sidebar": "#00252f",
+          "bg-surface": "#04313c",
+          "bg-subtle": "#073642",
+          "bg-selected": "#113e4a",
+          "border-default": "rgb(147 161 161 / 16.5%)",
+          "border-subtle": "rgb(147 161 161 / 10.5%)",
+          "border-strong": "rgb(147 161 161 / 26.5%)",
+          "primary-from": "#a0aeae",
+          "primary-to": "#899797"
+        }
+      }
+    },
+    {
+      "id": "tokyo-night",
+      "name": "Tokyo Night",
+      "author": "enkia",
+      "version": "1.0.0",
+      "license": "MIT",
+      "file": "themes/tokyo-night.json",
+      "sha256": "2bc11264e820b7ec5db2c7843a1ba8315df151e4ebea3dfbad426fffd2434612",
+      "preview": {
+        "light": {
+          "bg-app": "#e6e7ed",
+          "bg-sidebar": "#d6d8df",
+          "bg-surface": "#e6e7ed",
+          "bg-subtle": "#dcdee3",
+          "bg-selected": "#c1c2c7",
+          "border-default": "rgb(52 59 88 / 12.5%)",
+          "border-subtle": "rgb(52 59 88 / 7.5%)",
+          "border-strong": "rgb(52 59 88 / 21.5%)",
+          "primary-from": "#4a5272",
+          "primary-to": "#383f5c"
+        },
+        "dark": {
+          "bg-app": "#1a1b26",
+          "bg-sidebar": "#16161e",
+          "bg-surface": "#202330",
+          "bg-subtle": "#292e42",
+          "bg-selected": "#363b54",
+          "border-default": "rgb(192 202 245 / 11.5%)",
+          "border-subtle": "rgb(192 202 245 / 7.5%)",
+          "border-strong": "rgb(192 202 245 / 19%)",
+          "primary-from": "#c8d2fe",
+          "primary-to": "#b0bae4"
+        }
+      }
+    }
+  ]
+}
