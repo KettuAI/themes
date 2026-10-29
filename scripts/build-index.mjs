@@ -1,8 +1,8 @@
-// Checks every theme in themes/, formats it, and writes index.json, the catalog OverBench reads.
+// Checks every theme in themes/, formats it, and writes index.json, the catalog Kettu reads.
 // Usage: node scripts/build-index.mjs [--check]
 //   --check writes nothing and fails when a theme is invalid or unformatted, or index.json is stale.
-// The theme checks are OverBench's own (src/shared/themes.ts in overbench/overbench), plus the
-// catalog's: an author, a version and a license, and nothing in a file that OverBench would ignore.
+// The theme checks are Kettu's own (src/shared/themes.ts in KettuAI/Kettu), plus the
+// catalog's: an author, a version and a license, and nothing in a file that Kettu would ignore.
 import { createHash } from 'node:crypto'
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
@@ -98,7 +98,7 @@ const TOKENS = new Set([
   'ansi-bright-white',
 ])
 
-// The tokens a theme's tile in OverBench draws, so the app can show it before downloading it.
+// The tokens a theme's tile in Kettu draws, so the app can show it before downloading it.
 const PREVIEW_TOKENS = [
   'bg-app',
   'bg-sidebar',
@@ -112,7 +112,7 @@ const PREVIEW_TOKENS = [
   'primary-to',
 ]
 
-const FIELDS = ['overbenchTheme', 'name', 'author', 'version', 'license', 'source', 'light', 'dark']
+const FIELDS = ['kettuTheme', 'name', 'author', 'version', 'license', 'source', 'light', 'dark']
 const VERSION = /^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$/
 const CODE_THEME = /^[a-z0-9-]{1,64}$/
 const CONTROL = /[\u0000-\u001f\u007f]/
@@ -127,7 +127,7 @@ const isText = (value, max) =>
   value === value.trim() &&
   !CONTROL.test(value)
 
-/** OverBench's id for a name: lowercase ASCII letters and digits, each other run a dash. */
+/** Kettu's id for a name: lowercase ASCII letters and digits, each other run a dash. */
 function themeId(name) {
   const slug = name
     .normalize('NFKD')
@@ -154,7 +154,7 @@ function component(part) {
 const isAmount = (part) => !!part && (part.unit === '' || part.unit === '%')
 const isHue = (part) => !!part && part.unit !== '%'
 
-/** Whether OverBench reads `value` as a color: hex, rgb(), hsl(), oklch(), oklab() or transparent. */
+/** Whether Kettu reads `value` as a color: hex, rgb(), hsl(), oklch(), oklab() or transparent. */
 function isColor(value) {
   const source = value.trim().toLowerCase()
   if (source === 'transparent') return true
@@ -185,13 +185,13 @@ function isColor(value) {
 /** Checks one theme file's parsed JSON; answers with its index entry or throws its first problem. */
 function checkTheme(fileName, raw) {
   if (!isRecord(raw)) throw new Error('is not a JSON object')
-  if (raw.overbenchTheme !== THEME_FORMAT) throw new Error(`needs "overbenchTheme": ${THEME_FORMAT}`)
+  if (raw.kettuTheme !== THEME_FORMAT) throw new Error(`needs "kettuTheme": ${THEME_FORMAT}`)
   const unknown = Object.keys(raw).find((key) => !FIELDS.includes(key))
-  if (unknown !== undefined) throw new Error(`has a field OverBench does not read: ${unknown}`)
+  if (unknown !== undefined) throw new Error(`has a field Kettu does not read: ${unknown}`)
 
   if (!isText(raw.name, 64)) throw new Error('needs a name of 1 to 64 characters')
   const id = themeId(raw.name)
-  if (id === 'overbench') throw new Error("takes the built-in theme's name")
+  if (id === 'kettu') throw new Error("takes the built-in theme's name")
   if (fileName !== `${id}.json`) throw new Error(`should be named ${id}.json, after its name`)
   if (!isText(raw.author, 100)) throw new Error('needs an author')
   if (!isText(raw.version, 32) || !VERSION.test(raw.version)) {
@@ -208,7 +208,7 @@ function checkTheme(fileName, raw) {
     const variant = raw[mode]
     if (!isRecord(variant)) throw new Error(`needs a ${mode} variant`)
     const extra = Object.keys(variant).find((key) => key !== 'colors' && key !== 'code')
-    if (extra !== undefined) throw new Error(`has a field OverBench does not read: ${mode}.${extra}`)
+    if (extra !== undefined) throw new Error(`has a field Kettu does not read: ${mode}.${extra}`)
     const code = variant.code
     if (code !== undefined && (typeof code !== 'string' || !CODE_THEME.test(code))) {
       throw new Error(`${mode}.code is not a Shiki theme id`)
@@ -217,7 +217,7 @@ function checkTheme(fileName, raw) {
     if (!isRecord(colors)) throw new Error(`${mode}.colors is not an object`)
     for (const [token, value] of Object.entries(colors)) {
       const path = `${mode}.colors.${token}`
-      if (!TOKENS.has(token)) throw new Error(`${path} is not a token OverBench knows`)
+      if (!TOKENS.has(token)) throw new Error(`${path} is not a token Kettu knows`)
       if (!isText(value, 100) || !isColor(value)) throw new Error(`${path} is not a color`)
     }
     const shown = PREVIEW_TOKENS.filter((token) => Object.hasOwn(colors, token))
@@ -257,7 +257,7 @@ for (const fileName of readdirSync(join(ROOT, THEMES_DIR)).sort()) {
       throw new Error('is not UTF-8 JSON')
     }
     const entry = checkTheme(fileName, raw)
-    // Two spaces, LF and a final newline, so the bytes OverBench downloads match their hash here.
+    // Two spaces, LF and a final newline, so the bytes Kettu downloads match their hash here.
     const formatted = Buffer.from(`${JSON.stringify(raw, null, 2)}\n`)
     if (!formatted.equals(bytes)) {
       if (check) throw new Error('is not formatted; run node scripts/build-index.mjs')
@@ -271,7 +271,7 @@ for (const fileName of readdirSync(join(ROOT, THEMES_DIR)).sort()) {
   }
 }
 
-const index = `${JSON.stringify({ overbenchCatalog: CATALOG_FORMAT, themes }, null, 2)}\n`
+const index = `${JSON.stringify({ kettuCatalog: CATALOG_FORMAT, themes }, null, 2)}\n`
 if (problems.length === 0 && check) {
   let current = null
   try {
