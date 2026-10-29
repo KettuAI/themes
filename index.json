@@ -1,5 +1,5 @@
 {
-  "overbenchCatalog": 1,
+  "kettuCatalog": 1,
   "themes": [
     {
       "id": "catppuccin",
@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "license": "MIT",
       "file": "themes/catppuccin.json",
-      "sha256": "4d71ffe0b76c4c0ca7a09a92e38dba0ff959316557b83b6ad063e6cce87a9386",
+      "sha256": "ac24843e2df46e1cbe0573a3dc0994e8da22ab5c0f607f590b47b3761e469ea7",
       "preview": {
         "light": {
           "bg-app": "#eff1f5",
@@ -43,7 +43,7 @@
       "version": "1.0.0",
       "license": "MIT",
       "file": "themes/gruvbox.json",
-      "sha256": "3575e3339aeaa0a337a9c43d33b8d2c774b396f47a6ea276ea4841e43cffe3e6",
+      "sha256": "564a037cd9b071518ce2afa236b4c521b1cd5e98322481fb8dbda20005106ae1",
       "preview": {
         "light": {
           "bg-app": "#fbf1c7",
@@ -78,7 +78,7 @@
       "version": "1.0.0",
       "license": "MIT",
       "file": "themes/nord.json",
-      "sha256": "bfd9d05baece3d314aeb5e3c2d1e81d7c8f3265bec3ffe8a5bf59dc4ae404dae",
+      "sha256": "3e4582a53d29a5bf09c01f9b525ae4f81d7c64d98368e4cf54ed08534a83bdb4",
       "preview": {
         "light": {
           "bg-app": "#eceff4",
@@ -113,7 +113,7 @@
       "version": "1.0.0",
       "license": "MIT",
       "file": "themes/rose-pine.json",
-      "sha256": "41ee444ee2c0b6463e5f573a50d24b92a80f25ecb08e9f8420565715b049606b",
+      "sha256": "2072f62999faa81fc6fd590e640f36ff39c553db68098f42868c6d8e35e5e7d6",
       "preview": {
         "light": {
           "bg-app": "#faf4ed",
@@ -148,7 +148,7 @@
       "version": "1.0.0",
       "license": "MIT",
       "file": "themes/solarized.json",
-      "sha256": "f4728ec7a9f114a3004ffa11bbe89546576f5e0524bd1477fb63124bc59aae67",
+      "sha256": "8e03b2658dad3fe146569800ffd1156ac040346be70a8a97d92843b5ee4bdccd",
       "preview": {
         "light": {
           "bg-app": "#fdf6e3",
@@ -183,7 +183,7 @@
       "version": "1.0.0",
       "license": "MIT",
       "file": "themes/tokyo-night.json",
-      "sha256": "2bc11264e820b7ec5db2c7843a1ba8315df151e4ebea3dfbad426fffd2434612",
+      "sha256": "38cd293ef416df0ae450f66a4c67d37430a25628096d0f53ee153ec7b4de7a5f",
       "preview": {
         "light": {
           "bg-app": "#e6e7ed",
