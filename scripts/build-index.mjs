@@ -66,6 +66,7 @@ const TOKENS = new Set([
   'mark',
   'checker',
   'agent-opencode',
+  'agent-pi',
   'agent-other',
   'heat-hue',
   'heat-0',
@@ -112,7 +113,23 @@ const PREVIEW_TOKENS = [
   'primary-to',
 ]
 
-const FIELDS = ['kettuTheme', 'name', 'author', 'version', 'license', 'source', 'light', 'dark']
+const FIELDS = [
+  'kettuTheme',
+  'name',
+  'author',
+  'version',
+  'license',
+  'source',
+  'fonts',
+  'light',
+  'dark',
+]
+// The faces a theme may choose for each kind of text, all of them shipped with Kettu.
+const FONTS = {
+  ui: ['system', 'inter', 'source-serif-4', 'jetbrains-mono'],
+  prose: ['system', 'inter', 'source-serif-4', 'jetbrains-mono'],
+  code: ['system', 'jetbrains-mono'],
+}
 const VERSION = /^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$/
 const CODE_THEME = /^[a-z0-9-]{1,64}$/
 const CONTROL = /[\u0000-\u001f\u007f]/
@@ -201,6 +218,16 @@ function checkTheme(fileName, raw) {
   const source = typeof raw.source === 'string' ? URL.parse(raw.source) : null
   if (raw.source !== undefined && source?.protocol !== 'https:') {
     throw new Error('has a source that is not an https URL')
+  }
+
+  if (raw.fonts !== undefined) {
+    if (!isRecord(raw.fonts)) throw new Error('fonts is not an object')
+    for (const [role, face] of Object.entries(raw.fonts)) {
+      if (!Object.hasOwn(FONTS, role)) throw new Error(`fonts.${role} is not text Kettu sets`)
+      if (!FONTS[role].includes(face)) {
+        throw new Error(`fonts.${role} is not one of ${FONTS[role].join(', ')}`)
+      }
+    }
   }
 
   const preview = {}

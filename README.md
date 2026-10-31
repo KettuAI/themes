@@ -7,11 +7,12 @@ Color themes for [Kettu](https://github.com/KettuAI/Kettu). Kettu lists them in 
 | [Catppuccin](themes/catppuccin.json)   | Latte and Mocha | [Catppuccin](https://github.com/catppuccin/catppuccin)           | MIT     |
 | [Gruvbox](themes/gruvbox.json)         | Light and dark  | [Pavel Pertsev](https://github.com/morhetz/gruvbox)              | MIT     |
 | [Nord](themes/nord.json)               | Light and dark  | [Arctic Ice Studio](https://github.com/nordtheme/nord)           | MIT     |
+| [Paper](themes/paper.json)             | Light and dark  | [Kettu](https://github.com/KettuAI/Kettu)                        | MIT     |
 | [Rosé Pine](themes/rose-pine.json)     | Dawn and Main   | [Rosé Pine](https://github.com/rose-pine/rose-pine-theme)        | MIT     |
 | [Solarized](themes/solarized.json)     | Light and dark  | [Ethan Schoonover](https://github.com/altercation/solarized)     | MIT     |
 | [Tokyo Night](themes/tokyo-night.json) | Light and Night | [enkia](https://github.com/tokyo-night/tokyo-night-vscode-theme) | MIT     |
 
-Each keeps its palette's published colors. Where one is too faint for text on its own surfaces, under 4.5:1, the theme uses the same hue a shade lighter or darker for text. Solarized keeps its body text tone, so Kettu marks its tile with a contrast warning.
+Paper is Kettu's former built-in look: warm paper colors with Source Serif 4 for prose and headings and Inter for the interface. The others each keep their palette's published colors. Where one is too faint for text on its own surfaces, under 4.5:1, the theme uses the same hue a shade lighter or darker for text. Solarized keeps its body text tone, so Kettu marks its tile with a contrast warning.
 
 ## Adding a theme
 
@@ -42,6 +43,7 @@ A theme here needs a license that lets anyone use and share it, and names the pa
 ```
 
 - A color a variant leaves out keeps Kettu's own.
+- `fonts`, which both variants share, may name a face for `ui`, `prose` (the agent's replies and headings) and `code`: `system`, `inter`, `source-serif-4` or `jetbrains-mono`, and for `code` only `system` or `jetbrains-mono`. Kettu ships each of them; a role left out keeps Kettu's own.
 - Colors are hex, `rgb()`, `hsl()`, `oklch()`, `oklab()` or `transparent`; nothing else, such as `var()` or color names.
 - A file is at most 256 KB.
 

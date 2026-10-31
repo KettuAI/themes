@@ -107,6 +107,41 @@
       }
     },
     {
+      "id": "paper",
+      "name": "Paper",
+      "author": "Kettu",
+      "version": "1.0.0",
+      "license": "MIT",
+      "file": "themes/paper.json",
+      "sha256": "4b0680014dc9a51acb67353dfca6e61ee3e6038d22caf6bb10c2181c19480bb1",
+      "preview": {
+        "light": {
+          "bg-app": "#fdfcf9",
+          "bg-sidebar": "#efede6",
+          "bg-surface": "#ffffff",
+          "bg-subtle": "#f2f0e9",
+          "bg-selected": "rgb(28 27 24 / 7.5%)",
+          "border-default": "rgb(28 27 24 / 12%)",
+          "border-subtle": "rgb(28 27 24 / 7.5%)",
+          "border-strong": "rgb(28 27 24 / 20%)",
+          "primary-from": "#2e2d29",
+          "primary-to": "#1c1b18"
+        },
+        "dark": {
+          "bg-app": "#1c1b18",
+          "bg-sidebar": "#121110",
+          "bg-surface": "#262521",
+          "bg-subtle": "#2a2925",
+          "bg-selected": "rgb(244 243 238 / 9%)",
+          "border-default": "rgb(244 243 238 / 10%)",
+          "border-subtle": "rgb(244 243 238 / 6.5%)",
+          "border-strong": "rgb(244 243 238 / 18%)",
+          "primary-from": "#f4f3ee",
+          "primary-to": "#e3e1d9"
+        }
+      }
+    },
+    {
       "id": "rose-pine",
       "name": "Rosé Pine",
       "author": "Rosé Pine",
